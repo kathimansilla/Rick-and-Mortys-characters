@@ -14,19 +14,18 @@ useEffect(() => {
   });
 }, [])
 
-const renderCharacterList = (objList) => {
-  objList.map((eachElement) => {
-    return (
-    <li>
+const renderCharacterList = (characterList) => {
+  return characterList.map((eachElement) =>
+    (
+    <li key={eachElement.id}>
       <img src={eachElement.image} alt={eachElement.name} />
       <h3>{eachElement.name}</h3>
       <p>{eachElement.species}</p>
     </li>)
-  });
+  );
 };
   return (
     <div>
-      <h1>Hola</h1>
       <ul>
         {renderCharacterList(characterList)}
       </ul>
