@@ -1,0 +1,13 @@
+@import '../core/var';
+
+.footer {
+    height: 5vh;
+    margin: 10px 0;
+    border-top: 1px solid #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__text {
+        font-size: 1.2rem;
+    }
+}

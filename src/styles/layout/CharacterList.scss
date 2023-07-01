@@ -1,0 +1,27 @@
+@import '../core/var';
+
+.characterList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px 100px;
+  background-image: url('../../images/rickandmorty.png');
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 200px;
+  &__item {
+    width: 180px;
+    text-align: center;
+    box-shadow: 0 0 10px rgb(78, 200, 227);
+    &--img {
+      width: 180px;
+    }
+    &--name {
+      font-size: 1.2rem;
+    }
+    &--text {
+      font-size: 1.2rem;
+    }
+  }
+}

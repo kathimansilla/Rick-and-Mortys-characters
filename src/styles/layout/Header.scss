@@ -1,0 +1,12 @@
+@import '../core/var';
+
+.header {
+    padding: 0 100px;
+    border-bottom: 1px solid #000000;
+    display: flex;
+        justify-content: flex-end;
+       
+    &__img {
+        width: 150px;
+    }
+}

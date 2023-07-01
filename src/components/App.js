@@ -2,6 +2,8 @@ import '../styles/App.scss';
 import { useEffect, useState } from 'react';
 import callToApi from '../services/api';
 import CharacterList from './CharacterList';
+import Header from './Header';
+import Footer from './Footer';
 
 function App() {
 // variables de estado
@@ -17,10 +19,10 @@ useEffect(() => {
 
 
   return (
-    <div>
-      <ul className='characterList'>
+    <div className='container'>
+        <Header />
         <CharacterList characterList={characterList}/>
-      </ul>
+        <Footer />
     </div>
   );
 }
