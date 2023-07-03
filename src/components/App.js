@@ -7,21 +7,27 @@ import Footer from './Footer';
 
 function App() {
 // variables de estado
-const [characterList, setCharacterList] = useState([]);
+const [characterList, setCharacterList] = useState( [] );
+const [searchByName, setSearchByName] = useState('');
+
 
 // funciones
 useEffect(() => {
   callToApi()
   .then((cleanData) => {
-    setCharacterList(cleanData);
+  setCharacterList(cleanData);  
+  console.log(cleanData);
   });
 }, [])
 
+const filteredByName = (value) => {
+  setSearchByName(value);
+};
 
   return (
     <div className='container'>
-        <Header />
-        <CharacterList characterList={characterList}/>
+        <Header filteredByName={filteredByName} searchByName={searchByName}/>
+        <CharacterList characterList={characterList} searchByName={searchByName}/>
         <Footer />
     </div>
   );
