@@ -7,17 +7,21 @@ import Footer from './Footer';
 import CharacterDetail from './CharacterDetails';
 import { Route, Routes } from 'react-router-dom';
 import { useLocation, matchPath } from 'react-router-dom';
+import ls from '../services/localStorage';
 
 function App() {
   // variables de estado
-  const [characterList, setCharacterList] = useState([]);
+  const [characterList, setCharacterList] = useState(ls.get('characterListData', []));
   const [searchByName, setSearchByName] = useState('');
 
   // funciones
   useEffect(() => {
-    callToApi().then((cleanData) => {
-      setCharacterList(cleanData);
-    });
+    if (ls.get('characterListData', null) === null) {
+      callToApi().then((cleanData) => {
+        setCharacterList(cleanData);
+        ls.set('characterListData', cleanData);
+      });
+    }
   }, []);
 
   const filteredByName = (value) => {
@@ -28,18 +32,15 @@ function App() {
 
 const {pathname} = useLocation();
 const routeData = matchPath('/character/:characterId', pathname);
-const characterId = routeData?.params.characterId;
-console.log(characterId);
-console.log(characterList);
+const characterId = parseInt(routeData?.params.characterId);
 const clickedCharacterData = characterList.find((character) => character.id === characterId);
-console.log(clickedCharacterData);
 
 // jsx
 
   return (
-    <div className="container">
+    <div className='container'>
       <Header filteredByName={filteredByName} searchByName={searchByName} />
-      <main>
+      <main className='main'>
         <Routes>
           <Route path='/' element={<CharacterList
             characterList={characterList}
