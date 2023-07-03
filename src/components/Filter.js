@@ -1,4 +1,3 @@
-//import { useState } from 'react';
 import '../styles/layout/Header.scss';
 
 const Filter = ( {filteredByName, searchByName} ) => {

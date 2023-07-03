@@ -6,22 +6,29 @@
   justify-content: center;
   gap: 15px;
   padding: 20px 100px;
-  background-image: url('../../images/rickandmorty.png');
-  background-position: left bottom;
-  background-repeat: no-repeat;
-  background-size: 200px;
   &__item {
     width: 180px;
     text-align: center;
-    box-shadow: 0 0 10px #000000;
+    box-shadow: 0 0 15px rgb(68, 213, 68);
+    border: #000000 solid 2px;
+    background-color: #000000;
     &--img {
       width: 180px;
     }
     &--name {
-      font-size: 1.2rem;
+      margin-top: 5px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: rgb(181, 247, 181);
     }
     &--text {
       font-size: 1.2rem;
+      margin-bottom: 5px;
+      color: rgb(181, 247, 181);
+    }
+    &--link {
+      text-decoration: none;
+      color: rgb(3, 43, 3);
     }
   }
 }

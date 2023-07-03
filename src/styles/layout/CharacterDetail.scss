@@ -1,0 +1,51 @@
+@import '../core/var';
+
+.characterDetail {
+  background-image: url('../../images/rick2.jpeg');
+  background-position: left 10px bottom;
+  background-repeat: no-repeat;
+  background-size: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 65vh;
+  &__item {
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 0 15px rgb(68, 213, 68);
+    border: #000000 solid 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: #000000;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    &--img {
+      width: 250px;
+    }
+    &--name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: rgb(181, 247, 181);
+    }
+    &--text {
+      font-size: 1.3rem;
+      color: rgb(181, 247, 181);
+    }
+  }
+  & .backBtn {
+    margin-top: 15px;
+    text-decoration: none;
+    border: #000000 1px solid;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #000000;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 0 15px rgb(106, 183, 188);
+  }
+}
+.error {
+  padding: 100px;
+}

@@ -1,33 +1,37 @@
 import { Link } from 'react-router-dom';
-import '../styles/layout/CharacterList.scss';
+import '../styles/layout/CharacterDetail.scss';
 
 const CharacterDetail = ({ clickedCharacterData }) => {
-  if (clickedCharacterData) {
+  if (clickedCharacterData !== undefined) {
     return (
-      <>
-        <img
-          src={clickedCharacterData.image}
-          alt={clickedCharacterData.name}
-          className="characterList__item--img"
-        />
-        <h3 className="characterList__item--name">
-          Nombre: {clickedCharacterData.name}
-        </h3>
-        <p className="characterList__item--text">
-          Especie: {clickedCharacterData.species}
-        </p>
-        <p className="characterList__item--text">
-          Origen: {clickedCharacterData.origin}
-        </p>
-        <p className="characterList__item--text">
-          Estado: {clickedCharacterData.status}
-        </p>
-        <Link to="/">Volver a página principal</Link>
-      </>
+      <section className='characterDetail'>
+        <div className='characterDetail__item'>
+          <img
+            src={clickedCharacterData.image}
+            alt={clickedCharacterData.name}
+            className="characterDetail__item--img"
+          />
+          <h3 className="characterDetail__item--name">
+            Nombre: {clickedCharacterData.name}
+          </h3>
+          <p className="characterDetail__item--text">
+            Especie: {clickedCharacterData.species}
+          </p>
+          <p className="characterDetail__item--text">
+            Origen: {clickedCharacterData.origin}
+          </p>
+          <p className="characterDetail__item--text">
+            Estado: {clickedCharacterData.status}
+          </p>
+        </div>
+        <Link to="/" className='backBtn'>Volver</Link>
+      </section>
     );
   } else {
     return (
-      <p className="error">Lo sentimos, no hemos encontrado ese personaje</p>
+      <section className='characterDetail'>
+      <Link to="/" className='backBtn'>Lo sentimos, no hemos encontrado ese personaje</Link>
+    </section>
     );
   }
 };
