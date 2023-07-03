@@ -31,7 +31,7 @@ const CharacterDetail = ({ clickedCharacterData }) => {
     return (
       <section className='characterDetail'>
       <Link to="/" className='backBtn'>Lo sentimos, no hemos encontrado ese personaje</Link>
-    </section>
+      </section>
     );
   }
 };
