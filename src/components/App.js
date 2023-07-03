@@ -17,7 +17,6 @@ function App() {
   useEffect(() => {
     callToApi().then((cleanData) => {
       setCharacterList(cleanData);
-      console.log(cleanData);
     });
   }, []);
 
@@ -25,16 +24,16 @@ function App() {
     setSearchByName(value);
   };
 
-  const handleSelectedCard = (selectedCard) => {
-    console.log(selectedCard);
-  };
-
 // obtener información de rutas
 
 const {pathname} = useLocation();
 const routeData = matchPath('/character/:characterId', pathname);
-const characterId = routeData.params.characterId;
+const characterId = routeData?.params.characterId;
 console.log(characterId);
+console.log(characterList);
+const clickedCharacterData = characterList.find((character) => character.id === characterId);
+console.log(clickedCharacterData);
+
 // jsx
 
   return (
@@ -45,9 +44,8 @@ console.log(characterId);
           <Route path='/' element={<CharacterList
             characterList={characterList}
             searchByName={searchByName}
-            handleSelectedCard={handleSelectedCard}
           />} />
-          <Route path='/character/:characterId' element={<CharacterDetail/>} />
+          <Route path='/character/:characterId' element={<CharacterDetail clickedCharacterData={clickedCharacterData}/>} />
         </Routes>
       </main>
       <Footer />
