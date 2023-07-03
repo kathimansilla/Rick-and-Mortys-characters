@@ -1,4 +1,3 @@
-//import { useState } from 'react';
 import '../styles/layout/Header.scss';
 
 const Filter = ( {filteredByName, searchByName} ) => {
@@ -7,7 +6,7 @@ const Filter = ( {filteredByName, searchByName} ) => {
     };
 
     const handleOnSubmit = (ev) => {
-        ev.prevent.default();
+        ev.preventDefault();
     };
     return (
         <form onSubmit={handleOnSubmit} className='header__filter'>
