@@ -20,7 +20,7 @@ function App() {
   // variables
   const headerMain = 'header';
   const headerWhitoutFilter = 'headerWhitoutFilter';
-  const bntText = '¡Has errado la ruta!';
+  const bntText = "Nobody belongs anywhere, nobody exists on purpose, everybody's going to die. Come check your navigation route!!!";
   
   // funciones
   useEffect(() => {

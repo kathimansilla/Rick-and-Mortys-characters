@@ -3,10 +3,10 @@ import '../styles/layout/Header.scss';
 
 const Header = ( {children, headerMain, headerWhitoutFilter} ) => {
     return (
-        <section className={headerMain + ' ' + headerWhitoutFilter}>
+        <header className={headerMain + ' ' + headerWhitoutFilter}>
           {children}
           <img className='header__img' src={heroImg} alt="Rick and Morty" />
-        </section>
+        </header>
     );
 };
 
