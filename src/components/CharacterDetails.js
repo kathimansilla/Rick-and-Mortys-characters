@@ -1,5 +1,6 @@
 import '../styles/layout/CharacterDetail.scss';
 import Button from './Button';
+import '../styles/layout/Button.scss';
 
 const CharacterDetail = ({ clickedCharacterData }) => {
   const bntTextError = 'Lo sentimos, no hemos encontrado ese personaje';

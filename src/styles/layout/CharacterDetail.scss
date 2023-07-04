@@ -29,17 +29,6 @@
       color: rgb(181, 247, 181);
     }
   }
-  & .backBtn {
-    margin-top: 10px;
-    text-decoration: none;
-    border: #000000 1px solid;
-    padding: 5px 7px;
-    border-radius: 5px;
-    background-color: #000000;
-    color: white;
-    font-size: 1rem;
-    box-shadow: 0 0 15px rgb(106, 183, 188);
-  }
 }
 
 @media screen and (min-width: 768px) {
@@ -62,10 +51,6 @@
         font-size: 1.2rem;
       }
     }
-    & .backBtn {
-      padding: 5px 10px;
-      font-size: 1.3rem;
-    }
   }
 }
 
@@ -84,10 +69,6 @@
       &--text {
         font-size: 1.3rem;
       }
-    }
-    & .backBtn {
-      margin-top: 15px;
-      font-size: 1.5rem;
     }
   }
 }

@@ -32,14 +32,28 @@
     }
   }
 }
-.backBtn {
-  margin-top: 15px;
+.errorBtn {
+  margin: 15px 30px;
+  text-align: center;
   text-decoration: none;
   border: #000000 1px solid;
-  padding: 5px 10px;
+  padding: 8px 10px;
   border-radius: 5px;
   background-color: #000000;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   box-shadow: 0 0 15px rgb(106, 183, 188);
+}
+
+@media screen and (min-width: 768px) {
+  .errorBtn {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .errorBtn {
+    margin-top: 15px;
+    font-size: 1.6rem;
+  }
 }

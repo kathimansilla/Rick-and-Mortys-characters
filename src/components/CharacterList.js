@@ -8,7 +8,7 @@ const CharacterList = ({ characterList, searchByName }) => {
   const filteredCharacter = characterList.filter((eachElement) => eachElement.name.toLowerCase().includes(searchByName.toLowerCase()));
 
   if (filteredCharacter.length === 0) {
-    htmlList =  <p className='backBtn'>No hay ningún personaje que coincida con la palabra {searchByName}</p>
+    htmlList =  <p className='errorBtn'>No hay ningún personaje que coincida con la palabra {searchByName}</p>
   } else {
     htmlList = filteredCharacter.map((eachElement) => (
       <li key={eachElement.id} className="characterList__item" >
