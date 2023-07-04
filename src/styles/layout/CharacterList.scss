@@ -1,11 +1,11 @@
 @import '../core/var';
 
 .characterList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: 180px;
+  grid-gap: 15px;
   padding: 20px 100px;
+  margin: auto;
   &__item {
     width: 180px;
     text-align: center;
@@ -32,30 +32,45 @@
     }
   }
 }
+
 .errorBtn {
-  margin: 15px 30px;
   text-align: center;
   text-decoration: none;
-  border: #000000 1px solid;
+ 
   padding: 8px 10px;
   border-radius: 5px;
-  background-color: #000000;
-  color: white;
+  background-color: rgb(106, 183, 188);
+  color: #000000;
   font-size: 1.4rem;
   box-shadow: 0 0 15px rgb(106, 183, 188);
-  min-width: 50vw;
+}
+
+@media screen and (min-width: 580px) {
+  .characterList {
+    grid-template-columns: repeat(2, 180px);
+  }
+ .errorBtn {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
 }
 
 @media screen and (min-width: 768px) {
+  .characterList {
+    grid-template-columns: repeat(3, 180px);
+  }
   .errorBtn {
-    font-size: 1.5rem;
-    width: 400px;
+    grid-column-start: 1;
+    grid-column-end: 4;
   }
 }
 
 @media screen and (min-width: 1024px) {
+  .characterList {
+    grid-template-columns: repeat(4, 180px);
+  }
   .errorBtn {
-    margin-top: 15px;
-    font-size: 1.6rem;
+    grid-column-start: 2;
+    grid-column-end: 4;
   }
 }
