@@ -3,7 +3,7 @@ import '../styles/layout/Button.scss';
 
 const Button = ( {bntText} ) => {
   return (
-    <Link to="/" className='errorBtn'>
+    <Link to="/" className='backBtn'>
       {bntText}
     </Link>
   );
