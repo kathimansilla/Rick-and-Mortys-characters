@@ -1,7 +1,7 @@
 import heroImg from '../images/rick1.jpeg';
 import '../styles/layout/Header.scss';
 
-const Header = ( {filteredByName, searchByName, children, headerMain, headerWhitoutFilter} ) => {
+const Header = ( {children, headerMain, headerWhitoutFilter} ) => {
     return (
         <section className={headerMain + ' ' + headerWhitoutFilter}>
           {children}

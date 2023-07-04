@@ -9,6 +9,7 @@ import { Route, Routes } from 'react-router-dom';
 import { useLocation, matchPath } from 'react-router-dom';
 import ls from '../services/localStorage';
 import Filter from './Filter';
+import Button from './Button';
 
 function App() {
   // variables de estado
@@ -20,6 +21,7 @@ function App() {
   // variables
   const headerMain = 'header';
   const headerWhitoutFilter = 'headerWhitoutFilter';
+  const bntText = '¡Has errado la ruta!';
 
   // funciones
   useEffect(() => {
@@ -53,11 +55,7 @@ function App() {
           path="/"
           element={
             <>
-              <Header
-                filteredByName={filteredByName}
-                searchByName={searchByName}
-                headerMain={headerMain}
-              >
+              <Header headerMain={headerMain}>
                 <Filter
                   filteredByName={filteredByName}
                   searchByName={searchByName}
@@ -78,7 +76,20 @@ function App() {
           element={
             <>
               <Header headerWhitoutFilter={headerWhitoutFilter} />
-              <CharacterDetail clickedCharacterData={clickedCharacterData} />
+              <main>
+                <CharacterDetail clickedCharacterData={clickedCharacterData} />
+              </main>
+            </>
+          }
+        />
+        <Route
+          path="/*"
+          element={
+            <>
+              <Header headerWhitoutFilter={headerWhitoutFilter} />
+              <main className="mainError">
+                <Button bntText={bntText}/>
+              </main>
             </>
           }
         />

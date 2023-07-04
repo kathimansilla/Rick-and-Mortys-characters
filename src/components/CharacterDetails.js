@@ -1,7 +1,10 @@
-import { Link } from 'react-router-dom';
 import '../styles/layout/CharacterDetail.scss';
+import Button from './Button';
 
 const CharacterDetail = ({ clickedCharacterData }) => {
+  const bntTextError = 'Lo sentimos, no hemos encontrado ese personaje';
+  const btnBack = 'Volver';
+
   if (clickedCharacterData !== undefined) {
     return (
       <section className='characterDetail'>
@@ -24,13 +27,13 @@ const CharacterDetail = ({ clickedCharacterData }) => {
             Estado: {clickedCharacterData.status}
           </p>
         </div>
-        <Link to="/" className='backBtn'>Volver</Link>
+        <Button bntText={btnBack}/>
       </section>
     );
   } else {
     return (
       <section className='characterDetail'>
-      <Link to="/" className='backBtn'>Lo sentimos, no hemos encontrado ese personaje</Link>
+      <Button bntText={bntTextError}/>
       </section>
     );
   }
