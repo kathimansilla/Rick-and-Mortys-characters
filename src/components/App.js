@@ -17,12 +17,11 @@ function App() {
     ls.get('characterListData', [])
   );
   const [searchByName, setSearchByName] = useState('');
-
   // variables
   const headerMain = 'header';
   const headerWhitoutFilter = 'headerWhitoutFilter';
   const bntText = '¡Has errado la ruta!';
-
+  
   // funciones
   useEffect(() => {
     if (ls.get('characterListData', null) === null) {
