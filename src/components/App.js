@@ -1,14 +1,13 @@
 import '../styles/App.scss';
 import { useEffect, useState } from 'react';
+import { Route, Routes, useLocation, matchPath } from 'react-router-dom';
 import callToApi from '../services/api';
-import CharacterList from './CharacterList';
-import Header from './Header';
-import Footer from './Footer';
-import CharacterDetail from './CharacterDetails';
-import { Route, Routes } from 'react-router-dom';
-import { useLocation, matchPath } from 'react-router-dom';
 import ls from '../services/localStorage';
+import Header from './Header';
 import Filter from './Filter';
+import CharacterList from './CharacterList';
+import CharacterDetail from './CharacterDetails';
+import Footer from './Footer';
 import Button from './Button';
 
 function App() {
@@ -17,27 +16,29 @@ function App() {
     ls.get('characterListData', [])
   );
   const [searchByName, setSearchByName] = useState('');
+
   // variables
   const headerMain = 'header';
   const headerWhitoutFilter = 'headerWhitoutFilter';
-  const bntText = "Nobody belongs anywhere, nobody exists on purpose, everybody's going to die. Come check your navigation route!!!";
-  
+  const bntText =
+    "Nobody belongs anywhere, nobody exists on purpose, everybody's going to die. Come check your navigation route!!!";
+
   // funciones
   useEffect(() => {
     if (ls.get('characterListData', null) === null) {
       callToApi().then((cleanData) => {
         setCharacterList(cleanData);
+        cleanData.sort((a, b) => a.name.localeCompare(b.name));
         ls.set('characterListData', cleanData);
       });
     }
   }, []);
-
+  
   const filteredByName = (value) => {
     setSearchByName(value);
   };
 
-  // obtener información de rutas
-
+  // información de rutas
   const { pathname } = useLocation();
   const routeData = matchPath('/character/:characterId', pathname);
   const characterId = parseInt(routeData?.params.characterId);
@@ -46,7 +47,6 @@ function App() {
   );
 
   // jsx
-
   return (
     <div className="container">
       <Routes>
@@ -87,7 +87,7 @@ function App() {
             <>
               <Header headerWhitoutFilter={headerWhitoutFilter} />
               <main className="mainError">
-                <Button bntText={bntText}/>
+                <Button bntText={bntText} />
               </main>
             </>
           }
