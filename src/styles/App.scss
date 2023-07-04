@@ -6,8 +6,13 @@
 }
 .main {
   min-height: 65vh;
-  background-image: url('../images/rickandmorty.png');
-  background-position: left bottom;
-  background-repeat: no-repeat;
-  background-size: 200px;
+}
+
+@media screen and (min-width: 520px) {
+  .main {
+    background-image: url('../images/rickandmorty.png');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: 200px;
+  }
 }

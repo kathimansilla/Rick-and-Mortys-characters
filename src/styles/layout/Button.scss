@@ -1,0 +1,24 @@
+@import '../core/var';
+.mainError {
+    background-image: url('../../images/rick2.jpeg');
+    background-position: left 10px bottom;
+    background-repeat: no-repeat;
+    background-size: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 65vh;
+    & .backBtn {
+        text-decoration: none;
+        text-align: center;
+        margin-bottom: 25px;
+        border: #000000 1px solid;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: #000000;
+        color: white;
+        font-size: 1.5rem;
+        box-shadow: 0 0 15px rgb(106, 183, 188);
+        max-width: 300px;
+      }
+}

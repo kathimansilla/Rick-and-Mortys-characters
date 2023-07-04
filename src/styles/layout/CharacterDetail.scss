@@ -1,17 +1,11 @@
-@import '../core/var';
-
 .characterDetail {
-  background-image: url('../../images/rick2.jpeg');
-  background-position: left 10px bottom;
-  background-repeat: no-repeat;
-  background-size: 270px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 65vh;
   &__item {
-    width: 250px;
+    width: 200px;
     text-align: center;
     box-shadow: 0 0 15px rgb(68, 213, 68);
     border: #000000 solid 2px;
@@ -20,32 +14,80 @@
     gap: 5px;
     background-color: #000000;
     margin-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+    overflow: hidden;
     &--img {
-      width: 250px;
+      max-width: 200px;
     }
     &--name {
-      font-size: 1.5rem;
+      font-size: 1.1rem;
       font-weight: bold;
       color: rgb(181, 247, 181);
     }
     &--text {
-      font-size: 1.3rem;
+      font-size: 1rem;
       color: rgb(181, 247, 181);
     }
   }
   & .backBtn {
-    margin-top: 15px;
+    margin-top: 10px;
     text-decoration: none;
     border: #000000 1px solid;
-    padding: 5px 10px;
+    padding: 5px 7px;
     border-radius: 5px;
     background-color: #000000;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
     box-shadow: 0 0 15px rgb(106, 183, 188);
   }
 }
-.error {
-  padding: 100px;
+
+@media screen and (min-width: 768px) {
+  .characterDetail {
+    background-image: url('../../images/rick2.jpeg');
+    background-position: left 10px bottom;
+    background-repeat: no-repeat;
+    background-size: 210px;
+    &__item {
+      width: 200px;
+      max-width: none;
+      &--img {
+        width: 200px;
+        max-width: none;
+      }
+      &--name {
+        font-size: 1.3rem;
+      }
+      &--text {
+        font-size: 1.2rem;
+      }
+    }
+    & .backBtn {
+      padding: 5px 10px;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .characterDetail {
+    background-size: 270px;
+    &__item {
+      width: 250px;
+      padding-bottom: 10px;
+      &--img {
+        width: 250px;
+      }
+      &--name {
+        font-size: 1.5rem;
+      }
+      &--text {
+        font-size: 1.3rem;
+      }
+    }
+    & .backBtn {
+      margin-top: 15px;
+      font-size: 1.5rem;
+    }
+  }
 }
