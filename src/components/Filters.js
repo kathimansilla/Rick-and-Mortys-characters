@@ -1,6 +1,6 @@
 import '../styles/layout/Header.scss';
 
-const Filters = ( {filteredByName, searchByName, filteredBySpecie, searchBySpecie} ) => {
+const Filters = ( {filteredByName, searchByName, filteredBySpecie, searchBySpecie } ) => {
     const handleInputName = (ev) => {
         filteredByName(ev.target.value);
     };

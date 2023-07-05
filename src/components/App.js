@@ -9,6 +9,7 @@ import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetails';
 import Footer from './Footer';
 import Button from './Button';
+import logo from '../images/rm1.png';
 
 function App() {
   // variables de estado
@@ -61,7 +62,7 @@ function App() {
           path="/"
           element={
             <>
-              <Header headerMain={headerMain}>
+              <Header headerMain={headerMain} logo={logo}>
                 <Filters
                   filteredByName={filteredByName}
                   searchByName={searchByName}
@@ -83,7 +84,7 @@ function App() {
           path="/character/:characterId"
           element={
             <>
-              <Header headerWhitoutFilter={headerWhitoutFilter} />
+              <Header headerWhitoutFilter={headerWhitoutFilter} logo={logo} />
               <main>
                 <CharacterDetail clickedCharacterData={clickedCharacterData} />
               </main>
