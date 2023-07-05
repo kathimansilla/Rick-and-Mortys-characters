@@ -7,9 +7,17 @@
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  &__filter {
+    &__filter {
     margin-bottom: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     &--input {
+      box-shadow: inset 0 0 5px rgb(68, 213, 68);
+      width: 70vw;
+      max-width: 400px;
+    }
+    &--select {
       box-shadow: inset 0 0 5px rgb(68, 213, 68);
       width: 70vw;
       max-width: 400px;

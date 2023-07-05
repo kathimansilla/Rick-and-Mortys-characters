@@ -4,7 +4,7 @@ import { Route, Routes, useLocation, matchPath } from 'react-router-dom';
 import callToApi from '../services/api';
 import ls from '../services/localStorage';
 import Header from './Header';
-import Filter from './Filter';
+import Filters from './Filters';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetails';
 import Footer from './Footer';
@@ -16,6 +16,7 @@ function App() {
     ls.get('characterListData', [])
   );
   const [searchByName, setSearchByName] = useState('');
+  const [searchBySpecie, setSearchBySpecie] = useState('');
 
   // variables
   const headerMain = 'header';
@@ -33,9 +34,13 @@ function App() {
       });
     }
   }, []);
-  
+
   const filteredByName = (value) => {
     setSearchByName(value);
+  };
+
+  const filteredBySpecie = (value) => {
+    setSearchBySpecie(value);
   };
 
   // información de rutas
@@ -55,16 +60,18 @@ function App() {
           element={
             <>
               <Header headerMain={headerMain}>
-                <Filter
+                <Filters
                   filteredByName={filteredByName}
                   searchByName={searchByName}
-                  headerMain={headerMain}
+                  searchBySpecie={searchBySpecie}
+                  filteredBySpecie={filteredBySpecie}
                 />
               </Header>
               <main className="main">
                 <CharacterList
                   characterList={characterList}
                   searchByName={searchByName}
+                  searchBySpecie={searchBySpecie}
                 />
               </main>
             </>
