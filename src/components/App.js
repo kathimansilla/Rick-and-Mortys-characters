@@ -15,8 +15,8 @@ function App() {
   const [characterList, setCharacterList] = useState(
     ls.get('characterListData', [])
   );
-  const [searchByName, setSearchByName] = useState('');
-  const [searchBySpecie, setSearchBySpecie] = useState('');
+  const [searchByName, setSearchByName] = useState(ls.get('filterName', ''));
+  const [searchBySpecie, setSearchBySpecie] = useState(ls.get('filterSpecie', ''));
 
   // variables
   const headerMain = 'header';
@@ -37,10 +37,12 @@ function App() {
 
   const filteredByName = (value) => {
     setSearchByName(value);
+    ls.set('filterName', value);
   };
 
   const filteredBySpecie = (value) => {
     setSearchBySpecie(value);
+    ls.set('filterSpecie', value);
   };
 
   // información de rutas
