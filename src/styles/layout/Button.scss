@@ -19,6 +19,13 @@
   box-shadow: 0 0 15px rgb(106, 183, 188);
 }
 
+.backBtn:hover {
+  background-color: rgb(137, 197, 201);
+  color: rgb(193, 208, 52);
+  border: rgb(193, 208, 52) 1px solid;
+  text-shadow: 1px 1px #000000;
+}
+
 @media screen and (min-width: 768px) {
 .mainError {
     background-image: url('../../images/rick2.jpeg');

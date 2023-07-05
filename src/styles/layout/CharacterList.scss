@@ -30,18 +30,22 @@
       color: rgb(3, 43, 3);
     }
   }
+  &__item:hover {
+    transform: scale(1.1);
+  }
 }
 
 .errorBtn {
   text-align: center;
   text-decoration: none;
- 
   padding: 8px 10px;
   border-radius: 5px;
-  background-color: rgb(106, 183, 188);
+  background-color: rgb(171, 223, 227);
   color: #000000;
   font-size: 1.4rem;
   box-shadow: 0 0 15px rgb(106, 183, 188);
+  color: rgb(193, 208, 52);
+  text-shadow: 1px 2px #000000;
 }
 
 @media screen and (min-width: 580px) {
@@ -49,6 +53,7 @@
     grid-template-columns: repeat(2, 180px);
   }
  .errorBtn {
+  font-size: 1.6rem;
     grid-column-start: 1;
     grid-column-end: 3;
   }
@@ -59,6 +64,7 @@
     grid-template-columns: repeat(3, 180px);
   }
   .errorBtn {
+    font-size: 1.8rem;
     grid-column-start: 1;
     grid-column-end: 4;
   }
@@ -69,6 +75,7 @@
     grid-template-columns: repeat(4, 180px);
   }
   .errorBtn {
+    font-size: 2rem;
     grid-column-start: 2;
     grid-column-end: 4;
   }

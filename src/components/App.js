@@ -95,7 +95,7 @@ function App() {
           path="/*"
           element={
             <>
-              <Header headerWhitoutFilter={headerWhitoutFilter} />
+              <Header headerWhitoutFilter={headerWhitoutFilter}logo={logo} />
               <main className="mainError">
                 <Button bntText={bntText} />
               </main>
